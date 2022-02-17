@@ -5,6 +5,8 @@ use App\Http\Controllers\LocationController;
 use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\TerlambatController;
 use App\Http\Controllers\CutiController;
+use App\Http\Controllers\MasukController;
+use App\Http\Controllers\PulangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,27 +27,18 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route::get('send-mail', function () {
-//     $details = [
-//         'title' => 'Mail from Sophismata',
-//         'body' => 'Terima kasih sudah menggunakan aplikasi e-Absensi'
-//     ];
-
-//     \Mail::to('sgibdd1@gmail.com')->send(new \App\Mail\MyMail($details));
-
-//     dd("Success sent email");
-// });
-
-Route::get('/absensi', [App\Http\Controllers\absenController::class, 'index'])->name('users.absensi');
     Route::get('/location', [App\Http\Controllers\LocationController::class, 'index'])->name('users.location');
 
 Route::get('/lihat-absen', [App\Http\Controllers\lihatAbsensiController::class, 'index'])->name('users.lihat');
 
 Route::get('/berita', [App\Http\Controllers\beritaController::class, 'index'])->name('users.berita');
-
+/*pengajuan*/ 
 Route::resource('pengajuan', PengajuanController::class);
 Route::resource('terlambat', TerlambatController::class);
 Route::resource('cuti', CutiController::class);
+/*absensi*/ 
+Route::resource('absensi', MasukController::class);
+Route::resource('pulang', PulangController::class);
 
 Route::get('/dokumentasi', [App\Http\Controllers\docsController::class, 'index'])->name('users.docs');
 

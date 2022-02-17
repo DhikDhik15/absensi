@@ -14,9 +14,7 @@ class AbsenMasuk extends Migration
     public function up()
     {
       Schema::create('absen_masuk', function (Blueprint $table) {
-          $table->id();
           $table->integer('id_user');
-          $table->dateTime('masuk');
           $table->timestamps();
       });
     }

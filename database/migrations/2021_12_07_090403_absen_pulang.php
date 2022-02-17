@@ -14,10 +14,7 @@ class AbsenPulang extends Migration
     public function up()
     {
       Schema::create('absen_pulang', function (Blueprint $table) {
-          $table->id();
           $table->integer('id_user');
-          $table->dateTime('pulang');
-          $table->integer('id_approval');
           $table->timestamps();
       });
     }
