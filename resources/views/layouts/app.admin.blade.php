@@ -33,18 +33,15 @@
               </button>
                 <div class="collapse navbar-collapse" id="mynavbar">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto fw-bold">
-                        <li class="nav-item">
-                            <a class="nav-link {{ ($title ?? "Absensi")? 'active': '' }}"  href="/absensi">Absensi</a>
+                    <ul class="navbar-nav mr-auto">
+                          <li class="nav-item">
+                            <a class="nav-link {{ ($title ?? "Approval Absensi")? 'active': '' }}"  href="/lihat-absen">Lihat Absen</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link {{ ($title ?? "Lihat Absen")? 'active': '' }}"  href="/lihat-absen">Lihat Absen</a>
+                            <a class="nav-link {{ ($title ?? "Add Berita")? 'active': '' }}"  href="/berita">Berita</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link {{ ($title ?? "Berita")? 'active': '' }}"  href="/berita">Berita</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link {{ ($title ?? "Pengajuan")? 'active': '' }}"  href="/pengajuan">Pengajuan</a>
+                            <a class="nav-link {{ ($title ?? "Approval Pengajuan")? 'active': '' }}"  href="/pengajuan">Pengajuan</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link {{ ($title ?? "Dokumentasi")? 'active': '' }}"  href="/dokumentasi">Docs</a>
