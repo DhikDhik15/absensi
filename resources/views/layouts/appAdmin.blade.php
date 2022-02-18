@@ -35,16 +35,16 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                           <li class="nav-item">
-                            <a class="nav-link {{ ($title ?? "Approval Absensi")? 'active': '' }}"  href="/lihat-absen">Lihat Absen</a>
+                            <a class="nav-link {{ ($title ?? "Approval Absensi")? 'active': '' }}"  href="approve-absen">Approval Absen</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link {{ ($title ?? "Add Berita")? 'active': '' }}"  href="/berita">Berita</a>
+                            <a class="nav-link {{ ($title ?? "Add Berita")? 'active': '' }}"  href="add-berita">Berita</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link {{ ($title ?? "Approval Pengajuan")? 'active': '' }}"  href="/pengajuan">Pengajuan</a>
+                            <a class="nav-link {{ ($title ?? "Approval Pengajuan")? 'active': '' }}"  href="approve-pengajuan">Approval Pengajuan</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link {{ ($title ?? "Dokumentasi")? 'active': '' }}"  href="/dokumentasi">Docs</a>
+                            <a class="nav-link {{ ($title ?? "Dokumentasi")? 'active': '' }}"  href="add-dokumentasi">Dokumentasi</a>
                           </li>
 
                     </ul>
