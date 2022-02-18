@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\TerlambatController;
@@ -32,6 +33,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/lihat-absen', [App\Http\Controllers\lihatAbsensiController::class, 'index'])->name('users.lihat');
 
 Route::get('/berita', [App\Http\Controllers\beritaController::class, 'index'])->name('users.berita');
+
+Route::group(['middleware' => ['auth:admin']], function () {
+    Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+});
+/*admin*/
+Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login');
+Route::get('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 /*pengajuan*/ 
 Route::resource('pengajuan', PengajuanController::class);
 Route::resource('terlambat', TerlambatController::class);
