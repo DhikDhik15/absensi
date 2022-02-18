@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\TerlambatController;
@@ -38,9 +39,9 @@ Route::group(['middleware' => ['auth:admin']], function () {
     Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 });
 /*admin*/
-Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
-Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login');
-Route::get('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+Route::get('/administrator/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/administrator/login', [AdminAuthController::class, 'login'])->name('admin.login');
+Route::get('/administrator/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 /*pengajuan*/ 
 Route::resource('pengajuan', PengajuanController::class);
 Route::resource('terlambat', TerlambatController::class);
