@@ -31,5 +31,5 @@ jobs:
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       env:
         DB_CONNECTION: mysql
-        DB_DATABASE: absensi.mysql
+        DB_DATABASE: database/absensi.mysql
       run: vendor/bin/phpunit
