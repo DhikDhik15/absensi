@@ -9,6 +9,7 @@ use App\Http\Controllers\TerlambatController;
 use App\Http\Controllers\CutiController;
 use App\Http\Controllers\MasukController;
 use App\Http\Controllers\PulangController;
+use App\Http\Controllers\AbsenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
     Route::get('/location', [App\Http\Controllers\LocationController::class, 'index'])->name('users.location');
 
-Route::get('/lihat-absen', [App\Http\Controllers\lihatAbsensiController::class, 'index'])->name('users.lihat');
+/*List Absen*/
+Route::resource('lihat-absen', AbsenController::class); 
 
 Route::get('/berita', [App\Http\Controllers\beritaController::class, 'index'])->name('users.berita');
 

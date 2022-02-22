@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\AbsenMasuk;
 
-class absenController extends Controller
+class AbsenController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class absenController extends Controller
      */
     public function index()
     {
-        return view('page/absensi');
+        $ListAbsen = AbsenMasuk::latest()->get();
+        return view('page.lihatAbsen', compact('ListAbsen'));
     }
 
     /**

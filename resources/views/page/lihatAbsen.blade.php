@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,31 +13,35 @@
   <table class="table table-striped table-hover">
     <thead>
       <tr class="fw-bold">
-        <th scope="col">#</th>
+        <th scope="col">Nama</th>
         <th scope="col">Tanggal</th>
-        <th scope="col">Absen Masuk</th>
+        {{-- <th scope="col">Absen Masuk</th>
         <th scope="col">Absen Pulang</th>
-        <th scope="col">Status Kehadiran</th>
+        <th scope="col">Status Kehadiran</th> --}}
       </tr>
     </thead>
     <tbody>
+      @forelse ($ListAbsen as $absen)
       <tr>
-        <th scope="row">1</th>
-        <td>2021-12-07</td>
-        <td>09:10</td>
+        <td>{{ $absen->name }}</td>
+        <td>{{ $absen->created_at }}</td>
+        {{-- <td>09:10</td>
         <td>16:69</td>
-        <td>Tidak Memenuhi</td>
-      </tr>
+        <td>Tidak Memenuhi</td> --}}
+      </tr> 
+      @empty
       <tr>
-        <th scope="row">2</th>
-        <td>2021-12-08</td>
-        <td>09:00</td>
-        <td>17:10</td>
-        <td>Memenuhi</td>
+        <td class="text-center text-mute" colspan="5">Data Kosong</td>
       </tr>
+      @endforelse
     </tbody>
   </table>
 </div>
+<script>
+  $(document).ready(function () {
+    $('#ListAbsen').DataTable();
+  });
+</script>
 @include('includes.script')
 </body>
 </html>
