@@ -12,7 +12,7 @@ class AdminAuthController extends Controller
     public function showLoginForm()
     {
         if (Auth::guard('admin')->check()) {
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('administrator.dashboard');
         } else {
             return view('auth.adminLogin');
         }
@@ -30,7 +30,7 @@ class AdminAuthController extends Controller
             'password' => $request->password,
         ])) {
             $user = auth()->user();
-            return redirect()->intended(url('/admin/dashboard'));
+            return redirect()->intended(url('/administrator/dashboard'));
         } else {
             return redirect()->back()->withError('Email atau Password salah');
         }

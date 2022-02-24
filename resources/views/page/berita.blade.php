@@ -16,9 +16,6 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="true" href="#">Informasi</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Event</a>
-        </li>
       </ul>
     </div>
     <div class="card-body">

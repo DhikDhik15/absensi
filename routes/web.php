@@ -10,6 +10,7 @@ use App\Http\Controllers\CutiController;
 use App\Http\Controllers\MasukController;
 use App\Http\Controllers\PulangController;
 use App\Http\Controllers\AbsenController;
+use App\Http\Controllers\BeritaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,10 +36,17 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 /*List Absen*/
 Route::resource('lihat-absen', AbsenController::class); 
 
-Route::get('/berita', [App\Http\Controllers\beritaController::class, 'index'])->name('users.berita');
+/*Berita*/ 
+// Route::controller(BeritaController::class)->group(function (){
+//     Route::get('berita', function(){
+//         dd("hello world!");
+//     });
+// });
+
+Route::resource('add-berita', BeritaController::class);
 
 Route::group(['middleware' => ['auth:admin']], function () {
-    Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('administrator/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 });
 /*admin*/
 Route::get('/administrator/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');

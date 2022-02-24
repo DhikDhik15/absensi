@@ -15,6 +15,6 @@ class AbsenMasuk extends Model
     public function user()
     {
         return $this->hasOne('User', 'foreign_key','id_user')
-        ->where('id_user', auth()->user()->id);
+        ->where('id_user', Auth::user()->getId());
     }
 }

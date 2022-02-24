@@ -14,10 +14,9 @@
     <thead>
       <tr class="fw-bold">
         <th scope="col">Nama</th>
-        <th scope="col">Tanggal</th>
-        {{-- <th scope="col">Absen Masuk</th>
+        <th scope="col">Absen Masuk</th>
         <th scope="col">Absen Pulang</th>
-        <th scope="col">Status Kehadiran</th> --}}
+        <th scope="col">Status Kehadiran</th>
       </tr>
     </thead>
     <tbody>
@@ -25,9 +24,8 @@
       <tr>
         <td>{{ $absen->name }}</td>
         <td>{{ $absen->created_at }}</td>
-        {{-- <td>09:10</td>
-        <td>16:69</td>
-        <td>Tidak Memenuhi</td> --}}
+        <td>0</td>
+        <td>Tidak Memenuhi</td>
       </tr> 
       @empty
       <tr>
